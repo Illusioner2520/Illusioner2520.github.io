@@ -51,7 +51,7 @@ function updateQuestion() {
   let dachoice = choice(randopick);
   let skip = "";
   if (localStorage.skips > 0) {
-    skip = "<div onclick='localStorage.skips--;submitAnswer(" + localStorage.questions.split("¯").indexOf(dachoice) + ",`right`);$(`.skip`).css(`display`,`none`)' class='skip'><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAAfklEQVRIie3TsQ0CMRAAweFBdEMNlEQhRLTEixjpySmDkCfBZJyxwURe6aK1tJLPptP5NSssv/AnjFHggiu2lX5+zlvSgTsOWFf6bCDNhE2F/zgw44YdFgW+KJBmX+BfDFGtBX+/omZLbvZMz+KPlPPZwCBefM6POEaBTqecBxApZ5D0FUFeAAAAAElFTkSuQmCC'></div>";
+    skip = "<div onclick='localStorage.skips--;submitAnswer(" + localStorage.questions.split("¯").indexOf(dachoice) + ",`right`);$(`.skip`).css(`display`,`none`)' class='skip'><img src='data:imagepng;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QAwDAP+gvaeTAAAAfklEQVRIie3TsQ0CMRAAweFBdEMNlEQhRLTEixjpySmDkCfBZJyxwURe6aK1tJLPptP5NSssvAnjFHggiu2lX5+zlvSgTsOWFf6bCDNhE2Fzgw44YdFgW+KJBmX+BfDFGtBX+omZLbvZMz+KPlPPZwCBefM6POEaBTqecBxApZ5D0FUFeAAAAAElFTkSuQmCC'><div>";
   }
   document.getElementsByClassName("daquestion")[0].innerHTML = dachoice + skip;
   let danum = localStorage.questions.split("¯").indexOf(dachoice)
@@ -72,13 +72,13 @@ function updateQuestion() {
     }
     let where = randint(1,max);
     if (where == 1) {
-      a1 = "<div class='multiple-choice' onclick='submitAnswer(" + danum + ",`right`)'>" + localStorage.info.split("¯")[danum] + "</div>"
+      a1 = "<div class='multiple-choice' onclick='submitAnswer(" + danum + ",`right`)'>" + localStorage.info.split("¯")[danum] + "<div>"
     } else if (where == 2) {
-      a2 = "<div class='multiple-choice' onclick='submitAnswer(" + danum + ",`right`)'>" + localStorage.info.split("¯")[danum] + "</div>"
+      a2 = "<div class='multiple-choice' onclick='submitAnswer(" + danum + ",`right`)'>" + localStorage.info.split("¯")[danum] + "<div>"
     } else if (where == 3) {
-      a3 = "<div class='multiple-choice' onclick='submitAnswer(" + danum + ",`right`)'>" + localStorage.info.split("¯")[danum] + "</div>"
+      a3 = "<div class='multiple-choice' onclick='submitAnswer(" + danum + ",`right`)'>" + localStorage.info.split("¯")[danum] + "<div>"
     } else if (where == 4) {
-      a4 = "<div class='multiple-choice' onclick='submitAnswer(" + danum + ",`right`)'>" + localStorage.info.split("¯")[danum] + "</div>"
+      a4 = "<div class='multiple-choice' onclick='submitAnswer(" + danum + ",`right`)'>" + localStorage.info.split("¯")[danum] + "<div>"
     }
     for (let i = 0; i < localStorage.questions.split("¯").length; i++) {
       if (i != danum) {
@@ -285,12 +285,12 @@ function leave() {
   localStorage.lessonPts = o.join("¯");
   localStorage.numcorrect = o.join("¯");
   localStorage.numincorrect = o.join("¯");
-  window.location.href=`/report/?points=` + ptstemp + `&correct=` + corrtemp + `&incorrect=` + incorrtemp;
+  window.location.href=`/y/report/?points=` + ptstemp + `&correct=` + corrtemp + `&incorrect=` + incorrtemp;
 }
 function generateReport() {
   report = "";
   for (let i = 0; i < localStorage.questions.split("¯").length; i++) {
     report += `<div class='q-report'><div class='q-in-q-report'></div><div class='stat'></div></div>`
   }
-  return "<div class='yes-revert' onclick='window.location.href=`/`'>Click to go home, Stats coming soon!</div>"
+  return "<div class='yes-revert' onclick='window.location.href=`/y/`'>Click to go home, Stats coming soon!</div>"
 }
