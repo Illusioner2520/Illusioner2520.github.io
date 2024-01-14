@@ -23,5 +23,5 @@ $(document).ready(function() {
   document.getElementsByClassName("coincount")[0].innerHTML = localStorage.coins + " coins";
 });
 function begin() {
-  window.location.href = "/lesson";
+  window.location.href = "/y/lesson";
 }
