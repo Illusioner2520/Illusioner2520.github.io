@@ -54,7 +54,7 @@ function update() {
   wednesdaysleft = 0;
   thursdaysleft = 0;
   fridaysleft = 0;
-  let file = "/days_off.json";
+  let file = "/d/days_off.json";
   let file2 = "";
   if (localStorage.getItem("grade") == "staff") {file = "/d/staff_days_off.json"; file2 = "/d/staff_schedule.json" }
   if (localStorage.getItem("grade") == "elementary") {file2 = "/d/elementary_schedule.json"}
