@@ -44,7 +44,7 @@ function submit() {
     localStorage.lessonPts = hi.join("¯");
     localStorage.questionst = "";
     localStorage.infot = "";
-    window.location.href = "/";
+    window.location.href = "/y/";
   } else {
     onKeyDown();
   }
