@@ -1,0 +1,157 @@
+.cont {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-image: radial-gradient(circle, #5c0067 0%, #00d4ff 100%);
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  flex-direction: column;
+}
+.number {
+  font-size: calc(20vw + 20vh);
+  font-family: "Comic Sans MS", "Comic Sans", "Arial", cursive;
+  color: white;
+  position: relative;
+  top: -70px;
+  max-width:100%;
+  overflow:hidden;
+}
+.spec-days {
+  height: 140px;
+  display: flex;
+  align-items:center;
+  position: absolute;
+  top: calc(100% - 140px);
+  width: calc(100% - 20px);
+  overflow: auto;
+  justify-content:flex-start;
+  gap: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.spec-spec-spec-days {
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  border-radius: 10px;
+  background-image: radial-gradient(circle, #00d4ff 0%, #5c0067 100%);
+  color: white;
+  width: 150px;
+  height: 120px;
+  text-align:center;
+  flex-shrink: 0;
+  margin:auto;
+}
+.weekday-num {
+  font-size: 60px;
+}
+.small {
+  font-size: 40px;
+}
+#the-grade {
+  position: absolute;
+  right: 10px;
+  top: 70px;
+  height: 50px;
+  width: 120px;
+  border-color: white;
+  background-color: transparent;
+  color: white;
+  font-size: 30px;
+  border-width: 5px;
+  border-radius: 10px;
+}
+#goto {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  height: 50px;
+  width: 200px;
+  border-color: white;
+  background-color: transparent;
+  color: white;
+  font-size: 30px;
+  border-width: 5px;
+  border-radius: 10px;
+}
+#goto > option {
+  color: black;
+}
+#the-grade > option {
+  color: black;
+}
+.progress {
+  position: absolute;
+  top: 15px;
+  height: 20px;
+  left: 15px;
+  width: 50%;
+  background-color: white;
+  border-radius: 10px;
+  z-index: 1;
+}
+.progress::after {
+  position: absolute;
+  height: 20px;
+  width: var(--progress-percentage);
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab,#23a6d5, #e73c7e, #ee7752);
+  border-radius: 10px;
+  z-index: 2;
+  content: attr(percent);
+	background-size: 400% 400%;
+	animation: gradient 20s linear infinite;
+  font-family: Arial;
+  color: white;
+  display: flex;
+ align-items:center;
+justify-content:center;
+  font-weight: bold;
+}
+@keyframes gradient {
+	0% {
+		background-position: -20% 50%;
+	}
+	100% {
+		background-position: 120% 50%;
+	}
+}
+@media (max-width: 475px) {
+  .progress {
+    width: calc(100% - 30px);
+  }
+  #goto {
+    top: 50px;
+    width: calc(50% - 15px);
+    right: calc(50% + 5px)
+  }
+  #the-grade {
+    top: 50px;
+    width: calc(50% - 15px);
+    right: 10px;
+  }
+  .number {
+    top: -10px;
+  }
+}
+.spec-days::-webkit-scrollbar {
+  width: 10px;
+}
+.spec-days::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 1000px;
+}
+.spec-days::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 1000px;
+}
+.spec-days::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.spec-days::-webkit-scrollbar-thumb:active {
+  background: #222;
+}
