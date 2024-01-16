@@ -3,3 +3,4 @@ const params = new Proxy(new URLSearchParams(window.location.search), {
   get: (searchParams, prop) => searchParams.get(prop),
 });
 document.getElementsByTagName("iframe")[0].setAttribute("src",urls[params.dir]);
+document.title = document.getElementsByTagName("iframe")[0].contentDocument.title;
