@@ -78,6 +78,23 @@
       margin:20px;
       max-width:calc(100% - 40px);
     }
+    .errorhandler {
+        position:fixed;
+        bottom:10px;
+        width:calc(100% - 40px);
+        left:10px;
+        border: 1px solid #a94442; 
+        color: #a94442; 
+        background: #f2dede; 
+        padding: 10px;  
+      border-radius: 5px; 
+      text-align: left;
+      display:none;
+      z-index:201;
+      font-size:18.7px;
+      font-weight:bold;
+      font-family: Arial;
+    }
   </style>
 </head>
 
@@ -101,21 +118,33 @@
               "num": 10
             })
                 .then(function(response) {
+                  if (response.result.items == null) {
+                    handleError("No recipes were found for the entered keywords. If no keywords were entered, simply click generate again and notify someone about the issue while mentioning the word " + rando + ".");
+                  }
                         console.log("Response", response);
                         let recipe = choice(response.result.items);
                         document.getElementsByClassName("container")[0].style.backgroundImage = "url(" + recipe.pagemap.cse_image[0].src + ")";
                         document.getElementsByClassName("container")[0].innerHTML = "<a target='_blank' href='" + recipe.link + "'><div class='recipe'><h1 style='margin-top:0px;text-align:center'>" + recipe.title + "</h1><p style='margin-bottom:0px'>" + recipe.snippet + "</p></div></a>";
                       },
-                      function(err) { console.error("Execute error", err); });
+                      function(err) { console.error("Execute error", err); handleError(err) });
           },
-                function(err) { console.error("Error loading GAPI client for API", err); });
+                function(err) { console.error("Error loading GAPI client for API", err); handleError(err) });
     }
     gapi.load("client");
     function choice(array) {
       return array[Math.floor(Math.random() * array.length)]
     }
+    function handleError(error) {
+        let errorhandler = document.getElementsByClassName("errorhandler")[0];
+        errorhandler.innerHTML = error;
+          document.getElementsByClassName("errorhandler")[0].style.display = "flex";
+        setTimeout(function() {
+          document.getElementsByClassName("errorhandler")[0].style.display = "none";
+        },3000)
+    }
   </script>
   <div class='container'><input placeholder='Keywords (optional)' name='keywords' id='keywords'><div class='generate' onclick='execute()'>Generate!</div></div>
+  <div class="errorhandler"></div>
 </body>
 
 </html>
