@@ -97,7 +97,7 @@
             console.log("Search for: " + rando + " recipe.");
             return gapi.client.search.cse.list({
               "cx": "1799982ae4a2d42ca",
-              "q": rando + "%20recipe",
+              "q": rando + " recipe",
               "num": 10
             })
                 .then(function(response) {
