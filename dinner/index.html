@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Random Recipes</title>
+  <style>
+    .container {
+      height:100%;
+      width:100%;
+      top:0px;
+      left:0px;
+      position:absolute;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background-color: #222222;
+      background-position: center;
+      background-size:cover;
+      flex-direction:column;
+      font-family:Arial;
+    }
+    .recipe {
+      background-color: #00000088;
+      border-radius:10px;
+      font-family:Arial;
+      font-size:20px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-direction:column;
+      padding:15px;
+      color:white;
+      max-width:80%;
+      cursor:pointer;
+    }
+    .generate {
+      padding:10px;
+      background-color:darkgreen;
+      color:white;
+      font-family:Arial, Helvetica, sans-serif;
+      font-size:20px;
+      border-radius:10px;
+      cursor:pointer;
+      min-width:200px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      min-height:50px;
+    }
+    .generate:hover {
+      background-color:green;
+    }
+    a {
+      text-decoration:none;
+      font-family:Arial;
+      font-size:20px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-direction:column;
+      padding:15px;
+      color:white;
+      max-width:100%;
+      cursor:pointer;
+    }
+    #keywords {
+      font-family:Arial, Helvetica, sans-serif;
+      font-size:30px;
+      color:white;
+      background-color:#333333;
+      border-radius:5px;
+      padding:10px;
+      border-width:2px;
+      border-color:#444444;
+      border-style:solid;
+      margin:20px;
+      max-width:calc(100% - 40px);
+    }
+  </style>
+</head>
+
+<body>
+  <script src="https://apis.google.com/js/api.js"></script>
+  <script>
+    let keywords = ["calzone","pizza","pasta","lasagna","risotto","spaghetti","ravioli","cake","pineapple","meatballs","chicken","salad","soup","sandwich","burger","fries","hotdog","sandwich","taco","burrito","tortilla","quesadilla","salmon","steak","fish","beef","lamb","pork","duck","egg","bacon","sausage","cheese","ham","bacon","filet mignon","chicken","salmon","tuna","shrimp","lobster","crab","clam","oyster","scallop","mussels","oysters","clams","shrimp","casserole","corn dog","popcorn","waffle","pancake","cereal","bagel","muffin","biscuit","cookie","donut","ice cream","pie","cherry","apple","banana","orange","grape","strawberry","blueberry","raspberry","blackberry","chip","doritos","lays","cheetos","fritos","pringles","takis","ruffles","potato","baked potato","mashed potato","sweet potato","green beans","kidney beans","green peas","mac and cheese","peanut butter and jelly","honey","butter","jam","cream cheese","cheddar cheese","noodles","vegetables","chili","hot sauce","ketchup","mustard","relish","mayonnaise","vinegar","shepherd's pie","kabob","grilled cheese","macaroni and cheese","chicken nuggets","french fries","poutine","pretzel","turkey","sloppy joes","wings","cheesy bread","mozzarella sticks","orange juice","roast beef sandwich","curly fries","bbq sauce","pie","cookies","chocolate","brownies","cake","cupcakes","candy","ice cream","popsicle","pasta","apple sauce","chicken sauce","peanut butter","jelly","bread","cereal","Asparagus","Lomo Saltado","Biscuits","Cookie","Cracker","Ginger snap","Hardtack","Abernethy","Acıbadem kurabiyesi","Afghan biscuits","Alfajor","Almond biscuit","Lebkuchen","Aachener Printen","Cornish fairing","Speculaas","Springerle","Kruidnoten","Bread","Croissant","Baguette","Toast","Burrito","Cabbage","Cabbage roll","Cake","Cheesecake","Chocolate cake","Carrot cake","Strawberry cake","Ice-cream cake","Chocolate","Pancake","Poundcake","Chopped liver","Cheese","Mozzarella","Brie","Feta","Blue cheese","Parmesan","Cheese stick","Congee","Donuts","Jam","Sprinkles","Donut holes","Dumplings","Arepa","Fun guo","Har gow","Momo (food)","Pierogi","Wonton","Fruits","Apple","Banana","Cantaloupe","Orange (fruit)","Cherry","Kiwi","Watermelon","Avocado","Apricot","Pear","Pineapple","Strawberry","French fries","Poutine","Grains","Cereal","Corn","Popcorn","Rice","Ice cream","Chocolate","Vanilla","Cookies and cream","Mint chocolate","Rocky road (ice cream)","Biscuit Tortoni","Blue moon (ice cream)","Queso ice cream","Hokey pokey (ice cream)","Moose Tracks","Tiger tail ice cream","Strawberry ice cream","Superman (ice cream flavor)","Spumoni","Pistachio ice cream","Moon mist","Neapolitan ice cream","Mashed potatoes","Meats","Beef","Wagyu","Steak","Pork","Bacon","Ham","Poultry","Buffalo wing","Chicken balls","Chicken nuggets","Chicken steak","Chicken feet","Ribs","Seafood","Fish","Salmon","Shrimp and prawn as food","Shark meat","Eggs","Scrambled egg","Sunny side up","Omelette","Boiled egg","Milk","Almond milk","Soy milk","Cow milk","Goat milk","Onion rings","Pasta","Lasagna","Linguini","Ravioli","Carbonara","Bolognese","Spaghetti","Spaghetti and meatballs","Pancit canton","Fettuccine","Pudding","Pupusa","Pie","Shepherds pie","Apple pie","Cream pie","Pumpkin pie","Key lime pie","Peach pie","Mud pie","Pizza","Margherita","Pepperoni","Hawaiian","Meat lovers","Rolls","Croquette","Egg roll","Spring roll","Lumpia","Burrito","Sandwiches","Grilled Cheese","Panini","Cheeseburgers","Bacon cheeseburger","Hamburgers","Chicken burger","Hot dogs","Peanut butter and jam sandwich","Submarine sandwich","Soup","Chowder","Clam Chowder","Corn chowder","Sinigang","Sushi","Stew","Taco","Tamale","Turnover","Jamaican patty","Waffle","Roti Canai"];
+    function execute() {
+      gapi.client.setApiKey("AIzaSyAcE6Rwhc4VNQzWJ7SKNuIj1uo9PAa092g");
+      return gapi.client.load("https://content.googleapis.com/discovery/v1/apis/customsearch/v1/rest")
+          .then(function() {
+            console.log("GAPI client loaded for API");
+            let rando = choice(keywords);
+            if (document.getElementById("keywords").value != "") {
+              rando = document.getElementById("keywords").value;
+            }
+            console.log("Search for: " + rando + " recipe.");
+            return gapi.client.search.cse.list({
+              "cx": "1799982ae4a2d42ca",
+              "q": rando + "%20recipe",
+              "num": 10
+            })
+                .then(function(response) {
+                        console.log("Response", response);
+                        let recipe = choice(response.result.items);
+                        document.getElementsByClassName("container")[0].style.backgroundImage = "url(" + recipe.pagemap.cse_image[0].src + ")";
+                        document.getElementsByClassName("container")[0].innerHTML = "<a target='_blank' href='" + recipe.link + "'><div class='recipe'><h1 style='margin-top:0px;text-align:center'>" + recipe.title + "</h1><p style='margin-bottom:0px'>" + recipe.snippet + "</p></div></a>";
+                      },
+                      function(err) { console.error("Execute error", err); });
+          },
+                function(err) { console.error("Error loading GAPI client for API", err); });
+    }
+    gapi.load("client");
+    function choice(array) {
+      return array[Math.floor(Math.random() * array.length)]
+    }
+  </script>
+  <div class='container'><input placeholder='Keywords (optional)' name='keywords' id='keywords'><div class='generate' onclick='execute()'>Generate!</div></div>
+</body>
+
+</html>
