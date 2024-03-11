@@ -72,13 +72,13 @@ function updateQuestion() {
     }
     let where = randint(1,max);
     if (where == 1) {
-      a1 = "<div class='multiple-choice' onclick='submitAnswer(" + danum + ",`right`)'>" + localStorage.info.split("¯")[danum] + "<div>"
+      a1 = "<div class='multiple-choice' onclick='submitAnswer(" + danum + ",`right`)'>" + localStorage.info.split("¯")[danum] + "</div>"
     } else if (where == 2) {
-      a2 = "<div class='multiple-choice' onclick='submitAnswer(" + danum + ",`right`)'>" + localStorage.info.split("¯")[danum] + "<div>"
+      a2 = "<div class='multiple-choice' onclick='submitAnswer(" + danum + ",`right`)'>" + localStorage.info.split("¯")[danum] + "</div>"
     } else if (where == 3) {
-      a3 = "<div class='multiple-choice' onclick='submitAnswer(" + danum + ",`right`)'>" + localStorage.info.split("¯")[danum] + "<div>"
+      a3 = "<div class='multiple-choice' onclick='submitAnswer(" + danum + ",`right`)'>" + localStorage.info.split("¯")[danum] + "</div>"
     } else if (where == 4) {
-      a4 = "<div class='multiple-choice' onclick='submitAnswer(" + danum + ",`right`)'>" + localStorage.info.split("¯")[danum] + "<div>"
+      a4 = "<div class='multiple-choice' onclick='submitAnswer(" + danum + ",`right`)'>" + localStorage.info.split("¯")[danum] + "</div>"
     }
     for (let i = 0; i < localStorage.questions.split("¯").length; i++) {
       if (i != danum) {
