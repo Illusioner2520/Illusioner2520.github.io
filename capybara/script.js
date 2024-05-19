@@ -11,10 +11,10 @@ let slope = 0;
 let falling = "Y"
 let oranges = 0;
 let lockMovement = "N/A"
-var audio = new Audio('jump.mp3');
+var audio = new Audio('/capybara/jump.mp3');
 audio.volume = 0.5
-var failure = new Audio('fail.mp3');
-var success = new Audio("success.mp3");
+var failure = new Audio('/capybara/fail.mp3');
+var success = new Audio("/capybara/success.mp3");
 let pointerX = -1;
 let pointerY = -1;
 const messages = ["HOW DARE YOU BE SO GOOD AT THIS GAME!!","YOU WILL NEVER BEAT YOUR PERSONAL BEST!","I WILL PERSONALLY MAKE SURE YOU WON'T SUCCEED!","THIS GAME WILL BE YOUR WORST GAME.","PLEASE SPARE ME!!!","THIS IS YOUR LAST CHANCE!!","YOU CAN'T TURN BACK NOW!","MWAHAHAHAHAHAHAH","😈😈😈😈😈😈😈😈😈","YOU ARE LITERALLY A CAPYBARA"];
@@ -81,7 +81,7 @@ function begin() {
   xval = -$(window).width() / 2 + 32;
   yval = $(window).height() / 2;
   cheight = 64;
-  document.getElementsByTagName("body")[0].innerHTML = "<img src='/capybara3.png' class='character'><div class='block topbar'></div><div class='block rightbar'></div><div class='block leftbar'></div><div class='block bottombar'></div><div class='messages'></div>";
+  document.getElementsByTagName("body")[0].innerHTML = "<img src='/capybara/capybara3.png' class='character'><div class='block topbar'></div><div class='block rightbar'></div><div class='block leftbar'></div><div class='block bottombar'></div><div class='messages'></div>";
   $(".topbar").text("Score: " + score + "; High Score: " + localStorage.highscore + "; Oranges: " + oranges)
 
   let height = $(window).height()
