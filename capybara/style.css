@@ -12,7 +12,7 @@
   width: 100%;
   position: absolute;
   flex-direction: column;
-  background-image:url('/most-epic-background-ever-and-no-one-can-object-this-message.png');
+  background-image:url('/capybara/most-epic-background-ever-and-no-one-can-object-this-message.png');
   background-repeat:no-repeat;
   background-position:bottom;
   background-size:cover;
@@ -722,7 +722,7 @@ label {
 .orange {
     width:32px;
     height:32px;
-    background-image: url("/orange.png");
+    background-image: url("/capybara/orange.png");
     background-size:100%;
     object-fit:contain;
     background-position:center;
@@ -738,7 +738,7 @@ label {
 .trophy {
     width:32px;
     height:32px;
-    background-image: url("/lemon.png");
+    background-image: url("/capybara/lemon.png");
     background-size:100%;
     object-fit:contain;
     background-position:center;
