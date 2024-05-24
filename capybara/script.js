@@ -456,7 +456,7 @@ function generateLevel() {
   let currentY = $(window).height() - 32;
   let currentX = 32;
   for (let i = 0; i < Math.random() * 60 + 10; i++) {
-    let random = Math.floor(Math.random() * 10);
+    let random = Math.floor(Math.random() * 9);
     if (random == 0) {
       document.getElementsByTagName("body")[0].innerHTML += "<div class='block otherbar" + i + "' style='top:calc(" + currentY + "px + var(--y-offset));left:calc(" + currentX + "px + var(--x-offset));height:32px;width:128px' top='" + currentY + "' left='" + currentX + "'></div>";
       currentX = currentX + 256;
@@ -501,12 +501,6 @@ function generateLevel() {
       document.getElementsByTagName("body")[0].innerHTML += "<div class='block otherbar" + i + "-4' style='top:calc(" + currentY + "px - 256px + var(--y-offset));left:calc(" + currentX + "px + 32px + var(--x-offset));height:32px;width:96px' top='" + (currentY - 256) + "' left='" + (currentX + 32) + "'></div>";
       currentX += 352;
       currentY -= (6 * 32);
-    } else if (random == 9) {
-      document.getElementsByTagName("body")[0].innerHTML += "<div class='block otherbar" + i + "' style='top:calc(" + currentY + "px + var(--y-offset));left:calc(" + currentX + "px + var(--x-offset));height:32px;width:32px' top='" + currentY + "' left='" + currentX + "'></div>";
-      document.getElementsByTagName("body")[0].innerHTML += "<div class='block otherbar" + i + "-2' style='top:calc(" + currentY + "px - 192px + var(--y-offset));left:calc(" + currentX + "px + 32px + var(--x-offset));height:32px;width:32px' top='" + (currentY - 192) + "' left='" + (currentX + 32) + "'></div>";
-      document.getElementsByTagName("body")[0].innerHTML += "<div class='block otherbar" + i + "-3' style='top:calc(" + currentY + "px - 384px + var(--y-offset));left:calc(" + currentX + "px + 64px + var(--x-offset));height:32px;width:32px' top='" + (currentY - 384) + "' left='" + (currentX + 64) + "'></div>";
-      currentX += 128;
-      currentY -= 576;
     }
   }
   document.getElementsByTagName("body")[0].innerHTML += "<div class='block otherbar" + "final" + "' style='top:calc(" + currentY + "px + var(--y-offset));left:calc(" + currentX + "px + var(--x-offset));height:32px;width:96px' top='" + currentY + "' left='" + currentX + "'></div>";
