@@ -51,7 +51,6 @@ function begin() {
     document.getElementsByTagName("body")[0].innerHTML += "<div class='enemy' topval='" + topval + "' leftval='" + leftval + "' style='top:calc(50% - " + topval + "px);left:calc(50% + " + leftval + "px);'></div>"
   }
 
-  document.getElementsByTagName("body")[0].innerHTML += "<div onclick='newLevel()' class='impossible'>Reset Level</div>"
   let theint = setInterval(function() {
     dontgetstuckininfiniteloops = 0
     let enemylist = document.getElementsByClassName("enemy");
