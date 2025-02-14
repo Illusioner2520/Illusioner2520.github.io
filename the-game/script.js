@@ -37,7 +37,7 @@ function begin() {
   xval = -16;
   yval = 0;
   cheight = 64;
-  document.getElementsByTagName("body")[0].innerHTML = "<img src='/character.png' class='character'><div class='block topbar'></div><div class='block rightbar'></div><div class='block leftbar'></div><div class='block bottombar'></div>";
+  document.getElementsByTagName("body")[0].innerHTML = "<img src='/the-game/character.png' class='character'><div class='block topbar'></div><div class='block rightbar'></div><div class='block leftbar'></div><div class='block bottombar'></div>";
   $(".topbar").text("Score: " + score + "; High Score: " + localStorage.highscore)
 
   let height = $(window).height()
@@ -50,7 +50,7 @@ function begin() {
     if (rorlnum == 0) rorl = "left"
     document.getElementsByTagName("body")[0].innerHTML += "<div class='block otherbar" + i + "' style='top:" + ((Math.random() * (100 / numberofotherbars)) + (i * (100 / numberofotherbars))) + "%;width:" + Math.random() * (60) + "%;height:32px;" + rorl + ":32px;'></div>"
   }
-  document.getElementsByTagName("body")[0].innerHTML += "<img class='trophy' style='height:32px;width:32px;position:absolute;top:" + (Math.random() * (height - 96) + 32) + "px;left:" + (Math.random() * (width - 96) + 32) + "px;image-rendering:pixelated' src='/cat.png'>"
+  document.getElementsByTagName("body")[0].innerHTML += "<img class='trophy' style='height:32px;width:32px;position:absolute;top:" + (Math.random() * (height - 96) + 32) + "px;left:" + (Math.random() * (width - 96) + 32) + "px;image-rendering:pixelated' src='/the-game/cat.png'>"
   for (let i = 0; i < numberofenemies; i++) {
     let topval = (Math.random() * (height - 32)) - ((height - 32) / 2);
     let leftval = (Math.random() * (width - 32)) - ((width - 32) / 2);
