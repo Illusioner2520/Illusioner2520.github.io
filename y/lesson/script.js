@@ -147,7 +147,7 @@ function shrinkToFit() {
       break;
     }
   } while (document.getElementsByClassName("daquestion")[0].scrollWidth > document.getElementsByClassName("daquestion")[0].offsetWidth || document.getElementsByClassName("daquestion")[0].scrollHeight > document.getElementsByClassName("daquestion")[0].offsetHeight);
-  div.css('font-size', fontSize + 'px');
+  div.css('font-size', fontSize - 20 + 'px');
   for (let i = 0; i < document.getElementsByClassName("multiple-choice").length; i++) {
     var divo = document.getElementsByClassName('multiple-choice')[i];
     var fontSizeo = 100;
@@ -159,7 +159,7 @@ function shrinkToFit() {
       }
     } while (document.getElementsByClassName("multiple-choice")[i].scrollWidth > document.getElementsByClassName("multiple-choice")[i].offsetWidth || document.getElementsByClassName("multiple-choice")[i].scrollHeight - 8 > document.getElementsByClassName("multiple-choice")[i].offsetHeight);
     fontSizeo = fontSizeo - 1;
-    $(divo).css('font-size', fontSizeo + 'px');
+    $(divo).css('font-size', fontSizeo - 20 + 'px');
   }
   if (document.getElementsByClassName("text-input")[0]) {
     var divoo = document.getElementsByClassName('text-input')[0];
