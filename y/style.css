@@ -294,7 +294,7 @@ hr {
   width: calc(50% - 5px);
   height: calc(50% - 13px);
   margin: 2.5px;
-  background-color: red;
+  background-color: color-mix(in lab, red, black);
   border-radius: 15px;
   flex-shrink: 0;
   cursor: pointer;
@@ -314,7 +314,7 @@ hr {
   align-items:center;
   width: 100%;
   height: calc(100% + 8px);
-  background-color: #7F0000;
+  background-color: color-mix(in lab, #7F0000, black);
   border-radius: 15px;
   flex-shrink: 0;
   cursor: pointer;
@@ -325,36 +325,34 @@ hr {
   content: "";
 }
 .multiple-choice:nth-child(2)::before {
-  background: #7f7f00;
-  color: black;
+  background: color-mix(in lab, #7f7f00, black);
 }
 .multiple-choice:nth-child(3)::before {
-  background: #004000;
+  background: color-mix(in lab, #004000, black);
 }
 .multiple-choice:nth-child(4)::before {
-  background: #00007f;
+  background: color-mix(in lab, #00007f, black);
 }
 .multiple-choice:nth-child(1):hover {
-  background-color: #ff3333;
+  background-color: color-mix(in lab, #ff3333, black);
 }
 .multiple-choice:nth-child(2):hover {
-  background-color: #ffff55;
+  background-color: color-mix(in lab, #ffff55, black);
 }
 .multiple-choice:nth-child(3):hover {
-  background-color: #338033;
+  background-color: color-mix(in lab, #338033, black);
 }
 .multiple-choice:nth-child(4):hover {
-  background-color: #3333ff;
+  background-color: color-mix(in lab, #3333ff, black);
 }
 .multiple-choice:nth-child(2) {
-  background: yellow;
-  color: black;
+  background: color-mix(in lab, yellow, black);
 }
 .multiple-choice:nth-child(3) {
-  background: green;
+  background: color-mix(in lab, green, black);
 }
 .multiple-choice:nth-child(4) {
-  background: blue;
+  background: color-mix(in lab, blue, black);
 }
 .text-answer {
   width: 100%;
